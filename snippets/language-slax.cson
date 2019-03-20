@@ -1,0 +1,179 @@
+"*":
+  arg:
+    prefix: "arg"
+    body: '''
+      
+      <arguments> {
+        <name> ${1};
+        <description> ${2};
+      }
+      
+    '''
+  catch:
+    prefix: "catch"
+    body: '''
+      
+      if ($${1}/../xnm:error) {
+        call ${2:rpc_failure}($${3:rpc} = $${1}, $${4:message} = "${5:Error with ${1}}");
+      }
+      
+    '''
+  "commit-script":
+    prefix: "commit-script"
+    body: '''
+      
+      version 1.0;   /* XML version not script version */
+      
+      ns junos = "http://xml.juniper.net/junos/*/junos";
+      ns xnm = "http://xml.juniper.net/xnm/1.1/xnm";
+      ns jcs = "http://xml.juniper.net/junos/commit-scripts/1.0";
+      ns ext = "http://xmlsoft.org/XSLT/namespace";
+       
+      import "../import/junos.xsl";
+      
+      match / {
+        <commit-script-results> {
+          ${4:/* your code goes here */}
+        }
+      }
+      
+    '''
+  eif:
+    prefix: "eif"
+    body: '''
+      
+      else if (${1}) {
+        ${2:/* if this true */}
+      }
+      
+    '''
+  "event-script":
+    prefix: "event-script"
+    body: '''
+      
+      version 1.0;   /* XML version not script version */
+      
+      ns junos = "http://xml.juniper.net/junos/*/junos";
+      ns xnm = "http://xml.juniper.net/xnm/1.1/xnm";
+      ns jcs = "http://xml.juniper.net/junos/commit-scripts/1.0";
+      ns ext = "http://xmlsoft.org/XSLT/namespace";
+       
+      import "../import/junos.xsl";
+      
+      ${1:
+      var $arguments = {
+        <argument> {
+          <name> ${2};
+          <description> ${3};
+        }
+      }
+      }
+      
+      match / {
+        <event-script-results> {
+          ${4:/* your code goes here */}
+        }
+      }
+      
+    '''
+  execute:
+    prefix: "execute"
+    body: '''
+      
+      jcs:execute(${1}, ${2});
+      
+    '''
+  "for-each":
+    prefix: "for-each"
+    body: '''
+      
+      for-each (${1}) {
+        ${2:/* add code here */}
+      }
+      
+    '''
+  if:
+    prefix: "if"
+    body: '''
+      
+      if (${1}) {
+        ${2:/* if true */}
+      }
+      
+    '''
+  ife:
+    prefix: "ife"
+    body: '''
+      
+      if (${1}) {
+        ${2:/* if true */}
+      }
+      else {
+        ${3:/* if false */}
+      }
+      
+    '''
+  ifeif:
+    prefix: "ifeif"
+    body: '''
+      
+      if (${1}) {
+        ${2:/* if this true */}
+      }
+      else if (${3}) {
+        ${4:/* or if this true */}
+      }
+      
+    '''
+  "op-script":
+    prefix: "op-script"
+    body: '''
+      
+      version 1.0;   /* XML version not script version */
+      
+      ns junos = "http://xml.juniper.net/junos/*/junos";
+      ns xnm = "http://xml.juniper.net/xnm/1.1/xnm";
+      ns jcs = "http://xml.juniper.net/junos/commit-scripts/1.0";
+      ns ext = "http://xmlsoft.org/XSLT/namespace";
+       
+      import "../import/junos.xsl";
+      
+      ${1:
+      var $arguments = {
+        <argument> {
+          <name> ${2};
+          <description> ${3};
+        }
+      }
+      }
+      
+      match / {
+        <op-script-results> {
+          ${4:/* your code goes here */}
+        }
+      }
+      
+    '''
+  syslog:
+    prefix: "syslog"
+    body: '''
+      
+      expr jcs:syslog("${1:facility.priority}", "${2:message}");
+      
+    '''
+  template:
+    prefix: "template"
+    body: '''
+      
+      template ${1:name_me}(${2}) {
+        ${3:/* function code */}
+      }
+      
+    '''
+  terminate:
+    prefix: "terminate"
+    body: '''
+      
+      <xsl:message terminate="yes"> ${1};
+      
+    '''
