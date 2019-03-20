@@ -1,21 +1,19 @@
 {
   "name": "language-slax",
-  "version": "0.0.2",
+  "version": "0.1.1",
   "description": "Syntax highlighting for Juniper SLAX",
-  "keywords": [
-  ],
+  "keywords": [],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dpajin/atom-language-slax.git"
   },
   "license": "apache-2.0",
   "engines": {
-    "atom": ">=1.0.0"
+    "atom": ">=1.0.0 <2.0.0"
   },
   "bugs": {
     "url": "https://github.com/dpajin/atom-language-slax/issues"
   },
   "homepage": "https://github.com/dpajin/atom-language-slax#readme",
-  "dependencies": {
-  }
+  "dependencies": {}
 }
