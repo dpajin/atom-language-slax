@@ -5,7 +5,7 @@
   "keywords": [],
   "repository": {
     "type": "git",
-    "url": "git://github.com/dpajin/atom-language-slax.git"
+    "url": "https://github.com/dpajin/atom-language-slax.git"
   },
   "license": "apache-2.0",
   "engines": {
