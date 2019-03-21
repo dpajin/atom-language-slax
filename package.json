@@ -2,7 +2,11 @@
   "name": "language-slax",
   "version": "0.0.17",
   "description": "Syntax highlighting for Juniper SLAX",
-  "keywords": [],
+  "keywords": [ 
+    "slax", 
+    "juniper", 
+    "junos" 
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/dpajin/atom-language-slax.git"
