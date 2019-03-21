@@ -1,11 +1,11 @@
 {
   "name": "language-slax",
-  "version": "0.0.17",
+  "version": "0.1.0",
   "description": "Syntax highlighting for Juniper SLAX",
-  "keywords": [ 
-    "slax", 
-    "juniper", 
-    "junos" 
+  "keywords": [
+    "slax",
+    "juniper",
+    "junos"
   ],
   "repository": {
     "type": "git",
