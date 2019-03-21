@@ -1,6 +1,6 @@
 {
   "name": "language-slax",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Syntax highlighting for Juniper SLAX",
   "keywords": [
     "slax",
