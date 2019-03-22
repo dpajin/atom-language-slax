@@ -25,7 +25,7 @@ patterns: [
   }
   {
     name: "keyword.other.slax"
-    match: "\\b(apply-templates|comment|else|append|include|ns|mvar|set|apply-imports|apply-templates|attribute|attribute-set|call|copy-node|copy-of|decimal-format|element|else|else if|expr|fallback|for|for-each|function|if|import|key|match|message|mode|mvar|number|output-method|param|preserve-space|priority|processing-instruction|result|set|sort|strip-space|template|terminate|trace|uexpr|use-attribute-sets|var|version|while|with)\\b"
+    match: "\\b(apply-templates|comment|else|append|include|ns|mvar|set|apply-imports|apply-templates|attribute|attribute-set|copy-node|copy-of|decimal-format|element|else|else if|expr|fallback|for|for-each|if|import|key|match|message|mode|mvar|number|output-method|param|preserve-space|priority|processing-instruction|result|set|sort|strip-space|terminate|trace|uexpr|use-attribute-sets|var|version|while|with)\\b"
   }
   {
     name: "meta.template.slax"
@@ -90,20 +90,6 @@ patterns: [
   {
     name: "support.function.slax"
     match: "\\b(curl:[^\\(]+)"
-  }
-  {
-    name: "variable.other.slax"
-    match: "(\\$[-a-zA-Z0-9]+)(\\/[^;){\\ ]+)"
-    captures:
-      "1":
-        name: "variable.other.slax"
-      "2":
-        name: "markup.underline.link.slax"
-  }
-  {
-    name: "variable.language.slax"
-    begin: "^\\s*var\\s+\\$arguments\\s*\\=\\s*\\{"
-    end: "^\\s*\\}"
   }
   {
     name: "variable.other.slax"
