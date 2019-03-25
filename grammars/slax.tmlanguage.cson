@@ -6,8 +6,8 @@ fileTypes: [
 patterns: [
   {
     name: "comment.block.slax"
-    begin: "/\\*"
-    end: "\\*/"
+    begin: "(^|\\s|\\n|\\r)/\\*"
+    end: "\\*/($|\\s|\\n|\\r)"
     captures:
       "0":
         name: "comment.block.slax"
